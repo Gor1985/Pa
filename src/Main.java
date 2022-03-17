@@ -13,7 +13,6 @@ public class Main {
         PlayerTwo playerTwo = new PlayerTwo();
         Switch s = new Switch();
         IsWin isWin = new IsWin();
-        Step step=new Step();
 
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -32,13 +31,11 @@ public class Main {
         Print.printField(s.sswitch());
 
         isWin.swich();
-        for (int i = 0; i <isWin.arrayList.size() ; i++) {
-            step.setStep(Integer.parseInt(String.valueOf(isWin.arrayList.get(i))));
-        }
-        System.out.println("Всем привет: "+step.getStep());
+
 
         XmlParsing.man();
-//checingForMath.checkingForMatch(s.sswitch());
+
+
     }
 
 }

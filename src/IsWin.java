@@ -6,14 +6,12 @@ import java.util.Arrays;
 public class IsWin {
 
     public static boolean isWin = false;
-    public static boolean tt=false;
-    public static boolean gg=false;
-    public static boolean aa=false;
-
+    public static int id;
     private static int a = 0;
     private static int b = 0;
+    public static String name;
+    public static String symvol;
     static int c = 0;
-
 
 
     PlayerOne playerOne = new PlayerOne();
@@ -111,22 +109,75 @@ public class IsWin {
             if (isWin) {
                 if (c == 9) {
                     System.out.println("Ничья");
+                    try {
+                        while (arrayList != null) {
+                            Step.setStep(arrayList.get(0));
+                            Step.setStep1(arrayList.get(1));
+                            Step.setStep2(arrayList.get(2));
+                            Step.setStep3(arrayList.get(3));
+                            Step.setStep4(arrayList.get(4));
+                            Step.setStep5(arrayList.get(5));
+                            Step.setStep6(arrayList.get(6));
+                            Step.setStep7(arrayList.get(7));
+                        }
 
-                    System.out.println( arrayList.size());
+                    } catch (IndexOutOfBoundsException e) {
 
-                    break;
+                        System.out.println("");
+                        break;
+                    }
+
+
 
                 } else if (aSwitch.randomPlayer == 1) {
-                    System.out.println("Победа: " + playerOne.getName() + crossOrZero);
-                    gg=true;
+
+                    symvol = symbol();
+                    System.out.println("Победа: " + PlayerOne.getName() + crossOrZero);
+                    id = 1;
+                    name = PlayerOne.getName();
+
+                    System.out.println(symvol + id + name);
+                    try {
+                        while (arrayList != null) {
+                            Step.setStep(arrayList.get(0));
+                            Step.setStep1(arrayList.get(1));
+                            Step.setStep2(arrayList.get(2));
+                            Step.setStep3(arrayList.get(3));
+                            Step.setStep4(arrayList.get(4));
+                            Step.setStep5(arrayList.get(5));
+                            Step.setStep6(arrayList.get(6));
+                            Step.setStep7(arrayList.get(7));
+                        }
+
+                    } catch (IndexOutOfBoundsException e) {
+
+                        System.out.println("");
+                    }
                     break;
 
 
                 } else {
+                    symvol = symbol();
+                    name = PlayerTwo.getName();
+                    id = 2;
                     System.out.println("Победа: " + playerTwo.getName() + crossOrZero);
-                    aa=true;
-                    break;
 
+                    try {
+                        while (arrayList != null) {
+                            Step.setStep(arrayList.get(0));
+                            Step.setStep1(arrayList.get(1));
+                            Step.setStep2(arrayList.get(2));
+                            Step.setStep3(arrayList.get(3));
+                            Step.setStep4(arrayList.get(4));
+                            Step.setStep5(arrayList.get(5));
+                            Step.setStep6(arrayList.get(6));
+                            Step.setStep7(arrayList.get(7));
+                        }
+
+                    } catch (IndexOutOfBoundsException e) {
+                        System.out.println("");
+                    }
+                    break;
                 }
 
             } else {
@@ -155,6 +206,15 @@ public class IsWin {
         return arrayList;
     }
 
+    String symbol() {
+        String a;
+        if (crossOrZero == 'x') {
+            a = "X";
+        } else {
+            a = "0";
+        }
+        return a;
+    }
 }
 
 

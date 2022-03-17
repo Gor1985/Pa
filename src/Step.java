@@ -1,83 +1,85 @@
 public class Step {
-    private int step;
-    private int step1;
-    private int step2;
-    private int step3;
-    private int step4;
-    private int step5;
-    private int step6;
-    private int step7;
-    private int step9;
+    private static int step;
+    private static int step1;
+    private static int step2;
+    private static int step3;
+    private static int step4;
+    private static int step5;
+    private static int step6;
+    private static int step7;
+    private static  int step8;
 
-    public int getStep() {
+    public static int getStep() {
         return step;
     }
 
-    public void setStep(int step) {
-        this.step = step;
+    public static void setStep8(int step8) {
+        Step.step8 = step8;
     }
 
-    public int getStep1() {
+    public static void setStep(int step) {
+        Step.step = step;
+    }
+
+    public static int getStep1() {
         return step1;
     }
 
-    public void setStep1(int step1) {
-        this.step1 = step1;
+    public static void setStep1(int step1) {
+        Step.step1 = step1;
     }
 
-    public int getStep2() {
+    public static int getStep2() {
         return step2;
     }
 
-    public void setStep2(int step2) {
-        this.step2 = step2;
+    public static void setStep2(int step2) {
+        Step.step2 = step2;
     }
 
-    public int getStep3() {
+    public static int getStep3() {
         return step3;
     }
 
-    public void setStep3(int step3) {
-        this.step3 = step3;
+    public static void setStep3(int step3) {
+        Step.step3 = step3;
     }
 
-    public int getStep4() {
+    public static int getStep4() {
         return step4;
     }
 
-    public void setStep4(int step4) {
-        this.step4 = step4;
+    public static void setStep4(int step4) {
+        Step.step4 = step4;
     }
 
-    public int getStep5() {
+    public static int getStep5() {
         return step5;
     }
 
-    public void setStep5(int step5) {
-        this.step5 = step5;
+    public static void setStep5(int step5) {
+        Step.step5 = step5;
     }
 
-    public int getStep6() {
+    public static int getStep6() {
         return step6;
     }
 
-    public void setStep6(int step6) {
-        this.step6 = step6;
+    public static void setStep6(int step6) {
+        Step.step6 = step6;
     }
 
-    public int getStep7() {
+    public static int getStep7() {
         return step7;
     }
 
-    public void setStep7(int step7) {
-        this.step7 = step7;
+    public static void setStep7(int step7) {
+        Step.step7 = step7;
     }
 
-    public int getStep9() {
-        return step9;
+    public static int getStep8() {
+        return step8;
     }
 
-    public void setStep9(int step9) {
-        this.step9 = step9;
-    }
 }
+
