@@ -53,7 +53,7 @@ public class IsWin {
             int num;
             try {
                 num = Integer.parseInt(reader.readLine()); // запрет ввода символов, отличных от чисел
-
+              c++;
                 arrayList.add(num);
             } catch (NumberFormatException | IOException e) {
                 System.out.println("Число, только число!");
@@ -63,34 +63,33 @@ public class IsWin {
                 switch (num) {
                     case 1 -> {
                         field[0][0] = crossOrZero;
-                        c = c + 1;
+
                     }
                     case 2 -> {
-                        c = c + 1;
+
                         field[0][1] = crossOrZero;
                     }
                     case 3 -> {
-                        c = c + 1;
+
                         field[0][2] = crossOrZero;
                     }
                     case 4 -> {
-                        c = c + 1;
+
                         field[1][0] = crossOrZero;
                     }
                     case 5 -> {
-                        c = c + 1;
-                        field[1][1] = crossOrZero;
+                             field[1][1] = crossOrZero;
                     }
                     case 6 -> {
-                        c = c + 1;
+
                         field[1][2] = crossOrZero;
                     }
                     case 7 -> {
-                        c = c + 1;
+
                         field[2][0] = crossOrZero;
                     }
                     case 8 -> {
-                        c = c + 1;
+
                         field[2][1] = crossOrZero;
                     }
                     case 9 -> field[2][2] = crossOrZero;
@@ -101,9 +100,9 @@ public class IsWin {
             }
             if (c >= 9) {
                 System.out.println("Ничья");
+
                 System.exit(1);
             }
-
 
             ChecingForMath.checkingForMatch(field);
             if (isWin) {
