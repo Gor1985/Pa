@@ -44,12 +44,13 @@ public class XmlParsing {
 
         XMLEventWriter writer = output.createXMLEventWriter(out);
 
-       try {
+
            XMLEvent event = eventFactory.createStartDocument();
-           writer.add(event);
-       }catch (java.lang.NullPointerException e ){
-           System.out.println("");
-       }
+
+               writer.add(event);
+
+
+
 
 
 
@@ -76,57 +77,74 @@ public class XmlParsing {
            writer.add(eventFactory.createStartElement("", "", "Step"));
            writer.add(eventFactory.createAttribute("num", "1"));
            writer.add(eventFactory.createAttribute("playerId", "1"));
-
-           writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep())));
+        if (Step.getStep()!=0) {
+            writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep())));
+        }
            writer.add(eventFactory.createEndElement("", "", " "));
 
 
            writer.add(eventFactory.createStartElement("", "", "Step"));
            writer.add(eventFactory.createAttribute("num", "2"));
            writer.add(eventFactory.createAttribute("playerId", "2"));
-           writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep1())));
+        if (Step.getStep1()!=0) {
+            writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep1())));
+        }
            writer.add(eventFactory.createEndElement("", "", " "));
 
            writer.add(eventFactory.createStartElement("", "", "Step"));
            writer.add(eventFactory.createAttribute("num", "3"));
            writer.add(eventFactory.createAttribute("playerId", "1"));
-           writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep3())));
+        if (Step.getStep2()!=0) {
+            writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep2())));
+        }
            writer.add(eventFactory.createEndElement("", "", " "));
 
            writer.add(eventFactory.createStartElement("", "", "Step"));
            writer.add(eventFactory.createAttribute("num", "4"));
            writer.add(eventFactory.createAttribute("playerId", "2"));
-           writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep4())));
+        if (Step.getStep3()!=0) {
+            writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep3())));
+        }
            writer.add(eventFactory.createEndElement("", "", " "));
 
            writer.add(eventFactory.createStartElement("", "", "Step"));
            writer.add(eventFactory.createAttribute("num", "5"));
            writer.add(eventFactory.createAttribute("playerId", "1"));
-           writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep5())));
+        if (Step.getStep4()!=0) {
+            writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep4())));
+        }
            writer.add(eventFactory.createEndElement("", "", " "));
 
            writer.add(eventFactory.createStartElement("", "", "Step"));
            writer.add(eventFactory.createAttribute("num", "6"));
            writer.add(eventFactory.createAttribute("playerId", "2"));
-           writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep6())));
+        if (Step.getStep5()!=0) {
+            writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep5())));
+        }
            writer.add(eventFactory.createEndElement("", "", " "));
 
            writer.add(eventFactory.createStartElement("", "", "Step"));
            writer.add(eventFactory.createAttribute("num", "7"));
            writer.add(eventFactory.createAttribute("playerId", "1"));
-           writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep7())));
+        if (Step.getStep6()!=0) {
+            writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep6())));
+        }
            writer.add(eventFactory.createEndElement("", "", " "));
            writer.add(eventFactory.createStartElement("", "", "Step"));
 
            writer.add(eventFactory.createAttribute("num", "8"));
            writer.add(eventFactory.createAttribute("playerId", "2"));
-           writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep8())));
+        if (Step.getStep7()!=0) {
+            writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep7())));
+        }
            writer.add(eventFactory.createEndElement("", "", " "));
 
            writer.add(eventFactory.createStartElement("", "", "Step"));
            writer.add(eventFactory.createAttribute("num", "9"));
            writer.add(eventFactory.createAttribute("playerId", "1"));
-           writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep8())));
+           if (Step.getStep8()!=0) {
+               writer.add(eventFactory.createCharacters(String.valueOf(Step.getStep8())));
+           }
            writer.add(eventFactory.createEndElement("", "", " "));
 
            writer.add(eventFactory.createEndElement("", "", " "));

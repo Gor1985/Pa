@@ -12,7 +12,7 @@ public class IsWin {
     public static String name;
     public static String symvol;
     static int c = 0;
-
+    ArrayList<Integer> arrayList = new <Integer>ArrayList();
 
     PlayerOne playerOne = new PlayerOne();
     PlayerTwo playerTwo = new PlayerTwo();
@@ -25,11 +25,11 @@ public class IsWin {
 
     // send the output to System.out
     // writeXml(System.out);
-    ArrayList<Integer> arrayList = new <Integer>ArrayList();
+
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 
-   char crossOrZero;
+    char crossOrZero;
     int switcher = 0; // переключатель между первым и вторым игроком
 
 
@@ -44,6 +44,7 @@ public class IsWin {
                 String e = Integer.toString(a);
 
             } else crossOrZero = 'o';
+
             b = b + 1;
             String z = Integer.toString(b);
 
@@ -52,7 +53,7 @@ public class IsWin {
             int num;
             try {
                 num = Integer.parseInt(reader.readLine()); // запрет ввода символов, отличных от чисел
-                c++;
+
                 arrayList.add(num);
             } catch (NumberFormatException | IOException e) {
                 System.out.println("Число, только число!");
@@ -60,84 +61,55 @@ public class IsWin {
             }
             if (Arrays.deepToString(field).contains(Integer.toString(num)) && num <= 9 && num > 0) {
                 switch (num) {
-
-                    case 1:
+                    case 1 -> {
                         field[0][0] = crossOrZero;
-                      //  c++;
-                        break;
-                    case 2:
-                     //   c++;
+                        c = c + 1;
+                    }
+                    case 2 -> {
+                        c = c + 1;
                         field[0][1] = crossOrZero;
-                        break;
-                    case 3:
-                     //   c++;
+                    }
+                    case 3 -> {
+                        c = c + 1;
                         field[0][2] = crossOrZero;
-                        break;
-                    case 4:
-                     //   c++;
+                    }
+                    case 4 -> {
+                        c = c + 1;
                         field[1][0] = crossOrZero;
-                        break;
-                    case 5:
-                     //   c++;
+                    }
+                    case 5 -> {
+                        c = c + 1;
                         field[1][1] = crossOrZero;
-                        break;
-                    case 6:
-                    //    c++;
+                    }
+                    case 6 -> {
+                        c = c + 1;
                         field[1][2] = crossOrZero;
-                        break;
-                    case 7:
-                   //     c++;
+                    }
+                    case 7 -> {
+                        c = c + 1;
                         field[2][0] = crossOrZero;
-                        break;
-                    case 8:
-                       // c++;
+                    }
+                    case 8 -> {
+                        c = c + 1;
                         field[2][1] = crossOrZero;
-                        break;
-                    case 9:
-                      //  c++;
-                        field[2][2] = crossOrZero;
-                        break;
+                    }
+                    case 9 -> field[2][2] = crossOrZero;
                 }
             } else {
-                if (c < 10) {
-                    System.out.println("Введите число из оставшихся на поле!");
-                    continue;
-                } else {
-                    break;
-                }
+                System.out.println("Введите число из оставшихся на поле!");
+                continue;
             }
+            if (c >= 9) {
+                System.out.println("Ничья");
+                System.exit(1);
+            }
+
+
             ChecingForMath.checkingForMatch(field);
-
-           if (isWin) {
-                if (c==9) {
-                   try {
-                        System.out.println("Использованы все "+c+" ходов. Ничья");
-                        System.exit(1);
+            if (isWin) {
 
 
-                       System.out.println("");
-                      for (Integer integer : arrayList)
-                           while (arrayList!=null) {
-                               Step.setStep(arrayList.get(0));
-                               Step.setStep1(arrayList.get(1));
-                                Step.setStep2(arrayList.get(2));
-                               Step.setStep3(arrayList.get(3));
-                               Step.setStep4(arrayList.get(4));
-                               Step.setStep5(arrayList.get(5));
-                                Step.setStep6(arrayList.get(6));
-                                Step.setStep7(arrayList.get(7));
-
-                            }
-
-                   }catch (NullPointerException e){
-                       System.out.println("");
-                    }
-
-
-
-
-
-                } else if (aSwitch.randomPlayer == 1) {
+               if (aSwitch.randomPlayer == 1) {
 
                     symvol = symbol();
                     System.out.println("Победа: " + PlayerOne.getName() + crossOrZero);
@@ -148,14 +120,15 @@ public class IsWin {
                     try {
                         for (Integer integer : arrayList)
                             while (arrayList!=null) {
+
                                 Step.setStep(arrayList.get(0));
                                 Step.setStep1(arrayList.get(1));
                                 Step.setStep2(arrayList.get(2));
                                 Step.setStep3(arrayList.get(3));
                                 Step.setStep4(arrayList.get(4));
-                                Step.setStep5(arrayList.get(5));
+                               Step.setStep5(arrayList.get(5));
                                 Step.setStep6(arrayList.get(6));
-                                Step.setStep7(arrayList.get(7));
+                               Step.setStep7(arrayList.get(7));
                             }
                     } catch (IndexOutOfBoundsException e) {
 
@@ -174,26 +147,26 @@ public class IsWin {
 
                     try {
 
-                            while (arrayList!=null) {
-                                Step.setStep(arrayList.get(0));
-                                Step.setStep1(arrayList.get(1));
-                                Step.setStep2(arrayList.get(2));
-                                Step.setStep3(arrayList.get(3));
-                                Step.setStep4(arrayList.get(4));
-                                Step.setStep5(arrayList.get(5));
-                                Step.setStep6(arrayList.get(6));
-                                Step.setStep7(arrayList.get(7));
-                            }
-
-
-                        } catch(IndexOutOfBoundsException e){
-                            System.out.println("");
+                        while (arrayList!=null) {
+                            Step.setStep(arrayList.get(0));
+                            Step.setStep1(arrayList.get(1));
+                            Step.setStep2(arrayList.get(2));
+                            Step.setStep3(arrayList.get(3));
+                            Step.setStep4(arrayList.get(4));
+                           Step.setStep5(arrayList.get(5));
+                            Step.setStep6(arrayList.get(6));
+                            Step.setStep7(arrayList.get(7));
                         }
+
+
+                    } catch(IndexOutOfBoundsException e){
+                        System.out.println("");
                     }
+                }
 
 
 
-               break;
+                break;
             } else {
                 System.out.println("Пока никто не выиграл. Играем дальше");
 
@@ -231,8 +204,3 @@ public class IsWin {
         return a;
     }
 }
-
-
-
-
-
